@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rule Engine UI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Rule Engine</h1>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Create Rule</h2>
+            <textarea id="ruleString" placeholder="Enter your rule..."></textarea>
+            <button onclick="createRule()">Create Rule</button>
+            <div id="createdRule" class="result"></div>
+        </div>
+
+        <div class="section">
+            <h2>Combine Rules</h2>
+            <textarea id="rulesList" placeholder="Enter rule IDs separated by new lines..."></textarea>
+            <button onclick="combineRules()">Combine Rules</button>
+            <div id="combinedRule" class="result"></div>
+        </div>
+
+        <div class="section">
+            <h2>Evaluate Rule by ID</h2>
+            <input type="text" id="ruleId" placeholder="Enter rule ID to evaluate"/>
+            <textarea id="dataInput" placeholder='{"age": 35, "department": "Sales", "salary": 60000, "experience": 3}'></textarea>
+            <button onclick="evaluateRule()">Evaluate Rule</button>
+            <div id="evaluationResult" class="result"></div>
+        </div>
+
+        <div class="section">
+            <h2>Evaluate Rule by AST</h2>
+            <textarea id="astInput" placeholder='{"type": "operator", "value": "AND", "left": {"type": "operand", "value": "age"}, "right": {"type": "operand", "value": 30}}'></textarea>
+            <textarea id="astDataInput" placeholder='{"age": 35, "salary": 60000, "department": "Sales", "experience": 5}'></textarea>
+            <button onclick="evaluateAst()">Evaluate AST</button>
+            <div id="astEvaluationResult" class="result"></div>
+        </div>
+
+        <div class="section">
+            <h2>All Created Rules</h2>
+            <div id="allRules" class="result"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
